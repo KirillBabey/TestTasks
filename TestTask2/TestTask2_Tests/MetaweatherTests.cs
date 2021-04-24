@@ -74,7 +74,7 @@ namespace TestTask2_Tests
             while (date > DateTime.Now.AddYears(-5))
             {
                 date = date.AddDays(-1);
-                IEnumerable<string> previousStates = client.GetForecast(834463, DateTime.Now.AddDays(-1)).Select(w => w.weather_state_name).Distinct();
+                IEnumerable<string> previousStates = client.GetForecast(location.woeid, date).Select(w => w.weather_state_name).Distinct();
                 if (previousStates.Contains(state))
                 {
                     weatherStateExists = true;

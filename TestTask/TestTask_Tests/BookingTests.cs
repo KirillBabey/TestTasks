@@ -54,6 +54,7 @@ namespace TestTask_Tests
         public void FiltersTest()
         {
             MainPage mainPage = new MainPage(this.driver);
+            mainPage.ChangeLaguage(Languages.Russian);
             mainPage.SelectDates(DateTime.Now.AddDays(7), DateTime.Now.AddDays(9));
             mainPage.SelectDestination("Минск");
             mainPage.SetGuests(2, 1, 1);
